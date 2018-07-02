@@ -6,6 +6,7 @@ public class StudentVO {
 	private String contactNumber;
 	private Integer rollNumber;
 	private String school;
+	private String language;
 	
 	public Integer getId() {
 		return id;
@@ -41,6 +42,12 @@ public class StudentVO {
 	public String toString() {
 		return "StudentVO [id=" + id + ", name=" + name + ", contactNumber=" + contactNumber + ", rollNumber="
 				+ rollNumber + ", school=" + school + "]";
+	}
+	public String getLanguage() {
+		return language;
+	}
+	public void setLanguage(String language) {
+		this.language = language;
 	}
 	
 }

@@ -7,6 +7,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ran.sample.spring.service.StudentService;
@@ -19,8 +20,9 @@ public class StudentController {
 	private StudentService studentService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView showForm() {
-		return new ModelAndView("studentView", "student", new StudentVO());
+	public ModelAndView showForm(ModelMap model) {
+		StudentVO student = new StudentVO();
+		return new ModelAndView("studentView", "student",student);
 	}
 	
 	@RequestMapping(value="list", method = RequestMethod.GET)
