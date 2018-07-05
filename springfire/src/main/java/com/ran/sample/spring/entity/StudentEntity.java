@@ -45,7 +45,7 @@ public class StudentEntity {
 	public void setRollNumber(Integer rollNumber) {
 		this.rollNumber = rollNumber;
 	}
-	public StudentVO toEntity() {
+	public StudentVO toVo() {
 		StudentVO studentVo = new 		StudentVO();
 		studentVo.setName(this.getName());
 		studentVo.setRollNumber(this.getRollNumber());

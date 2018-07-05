@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ran.sample.spring.dao.StudentDAO;
+import com.ran.sample.spring.entity.StudentEntity;
 import com.ran.sample.spring.vo.StudentVO;
 
 @Service
@@ -31,8 +32,11 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public List<StudentVO> findAll() {
-		//System.out.println(studentDao.findAll());
-		return new ArrayList<StudentVO>(testDB.values());
+		List<StudentVO> studentVos = new ArrayList<StudentVO>();
+		for(StudentEntity entity : studentDao.findAll()) {
+		studentVos.add(entity.toVo());
+		}
+		return studentVos;
 	}
 
 	@Override
